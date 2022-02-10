@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import axios from "axios";
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 
-export default function Home() {
+function Search() {
   const spotName = useRef();
   const [spot, setSpot] = useState([]);
   const [viewSearch, setSearch] = useState(true);
@@ -64,13 +64,13 @@ export default function Home() {
       )}
       ,
       <>
-        {spot.length < 1 ? (
+        {swell.length < 1 ? (
           <Row>
             <Col></Col>
             <Col sm={12} md={6} className="spot__results-col">
               {" "}
-              {spot ? (
-                spot.map((spot, i) => {
+              {data ? (
+                data.map((spot, i) => {
                   return (
                     <>
                       <p
@@ -98,3 +98,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default Search;
